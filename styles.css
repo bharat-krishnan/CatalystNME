@@ -1,18 +1,11 @@
-
-
-div.transitionButton  {
-  background: linear-gradient(238deg, #3FAA48, #5AC23D, #FFB8D7, #F178B5, #1F99D0, #3068C6);
-  background-size: 1200% 1200%;
-  -webkit-animation: rainbow 15s ease infinite;
-  animation: rainbow 15s ease infinite;
-}
-@-webkit-keyframes rainbow {
-  0% { background-position: 0% 50% }
-  50% { background-position: 100% 50% }
-  100% { background-position: 0% 50% }
-}
-@keyframes rainbow {
-  0% { background-position: 0% 50% }
-  50% { background-position: 100% 50% }
-  100% { background-position: 0% 50% }
-} 
+@keyframes example {
+    from {background-color: red;}
+    to {background-color: blue;}
+  }
+  div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+  }
