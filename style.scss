@@ -1,0 +1,84 @@
+ 
+
+.center {
+  margin: auto;
+  padding: 20px;
+  width: 50%;
+}
+
+body{
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    height: 100vh;
+    color: white;
+ 
+  }
+  
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  
+.glitch {
+  color: white;
+  font-size: 85px;
+  position: relative;
+  width: 400px;
+
+}
+@keyframes noise-anim {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      $top: random(100);
+      $bottom: random(101 - $top);
+      $topWithPercent: $top * 1%;
+      $bottomWithPercent: $bottom * 1%;
+      clip-path: inset(#{$topWithPercent} 0 #{$bottomWithPercent} 0);
+    }
+  }
+}
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 2px;
+  text-shadow: -3px 0 red;
+  top: 0;
+  opacity: .8;
+  color: white;
+  overflow: white;
+  animation: noise-anim 2s infinite linear alternate-reverse;
+}
+
+@keyframes noise-anim-2 {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      $top: random(100);
+      $bottom: random(101 - $top);
+      $topWithPercent: $top * 1%;
+      $bottomWithPercent: $bottom * 1%;
+      clip-path: inset(#{$topWithPercent} 0 #{$bottomWithPercent} 0);
+    }
+  }
+}
+.glitch::before {
+  content: attr(data-text);
+  position: absolute;
+  // left: -2px;
+  text-shadow: 3px 0 dodgerblue;
+  top: 0;
+  color: white;
+  // opacity: .6;
+  overflow: dodgerblue;
+  animation: noise-anim-2 15s infinite linear alternate-reverse;
+}
